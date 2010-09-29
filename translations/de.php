@@ -49,7 +49,7 @@
 	
 	$trans["GFlops soit"]="GFlops sprich";
 
-	$trans["source : http://www.top500.org/"]="source : http://www.top500.org/";
+	$trans["source : http://www.top500.org/"]="Quelle : http://www.top500.org/";
 
 	//***Aide attaque top500	
 	$trans["Attaque utilisant les 500 plus puissants ordinateurs de la planète"]="Angriff mit den 500 leichtungsstärksten Rechner der Welt.";
