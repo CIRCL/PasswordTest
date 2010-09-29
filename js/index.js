@@ -25,4 +25,9 @@ function()
                 $('#longueur_MdP_ecrit').html(longueur+"");
 		$('#longueur_MdP').val(longueur+"");
         });
+
+	$('#plus_informations_link').fancybox({
+		'transitionIn'	: 'fade',
+		'transitionOut'	: 'fade'
+	});
 }) ;

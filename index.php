@@ -1,5 +1,5 @@
 <?php
-	$loadjs=true;
+	$loadindexjs=true;
 	require_once "header.php";
 ?>
 <a href="/index.php?lang=<?=$transLang?>"><?=$transLangText?></a>

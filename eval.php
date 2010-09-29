@@ -1,5 +1,5 @@
 <?php
-$loadjs=false;
+$loadindexjs=false;
 require_once "header.php";
 
 if (!((isset($_POST['longueur_MdP']))))
@@ -35,7 +35,7 @@ if (isset($set_chars_minuscules_))
 {
 	if ($set_chars_minuscules_)
 	{
-		$caracteres_utilises .= "<img src = 'http://www.cases.public.lu/pictures/fiches/flchebleue.gif'> minuscules<br>";
+		$caracteres_utilises .= "<img src = '/images/flchebleue.gif'> minuscules<br>";
 		$nbr_caracteres_utilises += 26;
 		$nbr_familles_caracteres_utilisees++;
 	}
@@ -45,7 +45,7 @@ if (isset($set_chars_majuscules_))
 {
 	if ($set_chars_majuscules_)
 	{
-		$caracteres_utilises .= "<img src = 'http://www.cases.public.lu/pictures/fiches/flchebleue.gif'> majuscules<br>";
+		$caracteres_utilises .= "<img src = '/images/flchebleue.gif'> majuscules<br>";
 		$nbr_caracteres_utilises += 26;
 		$nbr_familles_caracteres_utilisees++;
 	}
@@ -55,7 +55,7 @@ if (isset($set_chars_chiffres_))
 {
 	if ($set_chars_chiffres_)
 	{
-		$caracteres_utilises .= "<img src = 'http://www.cases.public.lu/pictures/fiches/flchebleue.gif'> chiffres<br>";
+		$caracteres_utilises .= "<img src = '/images/flchebleue.gif'> chiffres<br>";
 		$nbr_caracteres_utilises += 10;
 		$nbr_familles_caracteres_utilisees++;
 	}
@@ -65,7 +65,7 @@ if (isset($set_chars_speciaux_))
 {
 	if ($set_chars_speciaux_)
 	{
-		$caracteres_utilises .= "<img src = 'http://www.cases.public.lu/pictures/fiches/flchebleue.gif'> caractères speciaux<br>";
+		$caracteres_utilises .= "<img src = '/images/flchebleue.gif'> caractères speciaux<br>";
 		$nbr_caracteres_utilises += 30;
 		$nbr_familles_caracteres_utilisees++;
 	}
@@ -105,7 +105,7 @@ if ($nbr_familles_caracteres_utilisees > 0)
 	echo "</tr>";
 
 	echo "<tr>";
-		echo "<td align = 'center'><b>".$trans["Résistance à une"]." <a href = '#' onclick='aide_attaque_standard()'>".$trans["attaque standard"]."</a></b></td>";
+		echo "<td align = 'center'><b>".$trans["Résistance à une"]." <a href = '#attaque_standard_content' id='attaque_standard_link'>".$trans["attaque standard"]."</a></b></td>";
 		if (round($nbr_jours_standard*24*3600/60, 0) == 0)
 		{
 			echo "<td align = 'center'>_</td>";
@@ -135,7 +135,7 @@ if ($nbr_familles_caracteres_utilisees > 0)
 	echo "</tr>";
 
 	echo "<tr>";
-		echo "<td align = 'center'><b>".$trans["Résistance à une"]." <a href = '#' onclick = 'aide_attaque_distribuee()'>".$trans["attaque distribuée"]."</a></b></td>";
+		echo "<td align = 'center'><b>".$trans["Résistance à une"]." <a href = '#attaque_distribuee_content' id='attaque_distribuee_link' >".$trans["attaque distribuée"]."</a></b></td>";
 		if (round($nbr_jours_distribuee*24*3600/60, 0) == 0)
 		{
 			echo "<td align = 'center'>_</td>";
@@ -165,7 +165,7 @@ if ($nbr_familles_caracteres_utilisees > 0)
 	echo "</tr>";
 
 	echo "<tr>";
-		echo "<td align = 'center'><b>".$trans["Résistance à une"]." <a href = '#' onclick = 'aide_attaque_top500_number_one()'>".$trans["attaque avec l'ordinateur le plus puissant de la planète"]."</a></b></td>";
+		echo "<td align = 'center'><b>".$trans["Résistance à une"]." <a href = '#attaque_top500_number_one_content' id = 'attaque_top500_number_one_link'>".$trans["attaque avec l'ordinateur le plus puissant de la planète"]."</a></b></td>";
 		if (round($nbr_jours_top500_number_one*24*3600/60, 0) == 0)
 		{
 			echo "<td align = 'center'>_</td>";
@@ -203,7 +203,7 @@ if ($nbr_familles_caracteres_utilisees > 0)
 	echo "</tr>";
 
 	echo "<tr>";
-		echo "<td align = 'center'><b>".$trans["Résistance à une"]." <a href = '#' onclick = 'aide_attaque_totalcomputing()'>".$trans["attaque utilisant les 500 plus puissants ordinateurs de la planète"]."</a></b></td>";
+		echo "<td align = 'center'><b>".$trans["Résistance à une"]." <a href = '#attaque_totalcomputing_content' id = 'attaque_totalcomputing_link'>".$trans["attaque utilisant les 500 plus puissants ordinateurs de la planète"]."</a></b></td>";
 		if (round($nbr_jours_totalcomputing*24*3600/60, 0) == 0)
 		{
 			echo "<td align = 'center'>_</td>";
