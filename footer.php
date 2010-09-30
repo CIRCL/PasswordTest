@@ -2,7 +2,7 @@
 __________
 <br>
 <a href = '#plus_informations_content' id="plus_informations_link"><?=$trans["Plus d'informations"]?></a>
-<div style="display:none;"
+<div style="display:none;">
 	<div class="popup" id="plus_informations_content">
 		<h1><?=$trans["Plus d'informations"]?></h1>
 		<p>
