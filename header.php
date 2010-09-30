@@ -31,6 +31,8 @@ require_once "include/functions.php";
 	<script type="text/javascript" src="/js/fancybox/jquery.fancybox-1.3.1.pack.js"></script>
 	<?php if ($loadindexjs): ?>
 		<script type="text/javascript" src="/js/index.js"></script>
+		<script type="text/javascript" src="/js/jquery-ui-1.8.5.custom.min.js"></script>
+		<link media="screen" rel="stylesheet" type="text/css" href="/css/jquery-ui-1.8.5.custom.css" />
 	<?php else: ?>
 		<script type="text/javascript" src="/js/eval.js"></script>
 	<?php endif; ?>
@@ -38,7 +40,6 @@ require_once "include/functions.php";
 	<link media="screen" rel="stylesheet" type="text/css" href="/js/fancybox/jquery.fancybox-1.3.1.css" />
 </head>
 <body>
-
 <h1><?=$trans["Tester la résistance d'un mot de passe"]?></h1>
 
 <br><br><br>

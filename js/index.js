@@ -30,4 +30,17 @@ function()
 		'transitionIn'	: 'fade',
 		'transitionOut'	: 'fade'
 	});
+
+	$("#slider").slider({
+			range: "min",
+			value: 8,
+			min: 1,
+			max: 40,
+			slide: function(event, ui) {
+				$('#longueur_MdP_ecrit').html(ui.value);
+				$('#longueur_MdP').val(ui.value);
+			}
+	});
+	$('#longueur_MdP_ecrit').html($("#slider").slider("value"));
+	$('#longueur_MdP').val($("#slider").slider("value"));
 }) ;

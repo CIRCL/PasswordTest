@@ -11,13 +11,14 @@
 	<div id="container">
 		<div id="longueur">
 			<h4><?=$trans["1. Combien de caractères composent le mot de passe ?"]?></h4>
-			<img src="/images/arrow_up.png" id="up"/>
 			<br/>
 			<?=$trans["Le mot de passe est composé de"]?>
 			<span id="longueur_MdP_ecrit"><?=$longueur_MdP_?></span>
 			<?=$trans["caractères."]?>
 			<br/>
-			<img src="/images/arrow_down.png" id="down"/>
+			<p>
+				<div id="slider"></div>
+			</p>
 			<br/><br/>
 			<input type="button" value="Suivant" id="longueur_next"/>
 		</div>
@@ -58,4 +59,3 @@
 </form>
 
 <?php require_once "footer.php";
-
