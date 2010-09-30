@@ -35,7 +35,7 @@ if (isset($set_chars_minuscules_))
 {
 	if ($set_chars_minuscules_)
 	{
-		$caracteres_utilises .= "<img src = '/images/flchebleue.gif'> minuscules<br>";
+		$caracteres_utilises .= "<img src = 'images/flchebleue.gif'> minuscules<br>";
 		$nbr_caracteres_utilises += 26;
 		$nbr_familles_caracteres_utilisees++;
 	}
@@ -45,7 +45,7 @@ if (isset($set_chars_majuscules_))
 {
 	if ($set_chars_majuscules_)
 	{
-		$caracteres_utilises .= "<img src = '/images/flchebleue.gif'> majuscules<br>";
+		$caracteres_utilises .= "<img src = 'images/flchebleue.gif'> majuscules<br>";
 		$nbr_caracteres_utilises += 26;
 		$nbr_familles_caracteres_utilisees++;
 	}
@@ -55,7 +55,7 @@ if (isset($set_chars_chiffres_))
 {
 	if ($set_chars_chiffres_)
 	{
-		$caracteres_utilises .= "<img src = '/images/flchebleue.gif'> chiffres<br>";
+		$caracteres_utilises .= "<img src = 'images/flchebleue.gif'> chiffres<br>";
 		$nbr_caracteres_utilises += 10;
 		$nbr_familles_caracteres_utilisees++;
 	}
@@ -65,7 +65,7 @@ if (isset($set_chars_speciaux_))
 {
 	if ($set_chars_speciaux_)
 	{
-		$caracteres_utilises .= "<img src = '/images/flchebleue.gif'> caractères speciaux<br>";
+		$caracteres_utilises .= "<img src = 'images/flchebleue.gif'> caractères speciaux<br>";
 		$nbr_caracteres_utilises += 30;
 		$nbr_familles_caracteres_utilisees++;
 	}

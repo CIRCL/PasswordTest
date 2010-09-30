@@ -28,15 +28,15 @@ __________
 			<?=$trans["Pour plus d'informations, se reporter aux articles CASES Luxembourg suivants :"]?>
 		</p>
 		<p>
-			<img src = '/images/flchebleue.gif'>
+			<img src = 'images/flchebleue.gif'>
 			<a href="<?=$transUrl['Fiche thématique mots de passe']?>" target="_blank" ><?=$trans["Fiche thématique <i>mots de passe</i>"]?></a>
 		</p>
 		<p>
-			<img src = '/images/flchebleue.gif'>
+			<img src = 'images/flchebleue.gif'>
 			<a href="<?=$transUrl["Règles de comportement mots de passe"]?>" target="_blank" ><?=$trans["Règles de comportement <i>mots de passe</i>"]?></a>
 		</p>
 		<p>
-			<img src = '/images/flchebleue.gif'>
+			<img src = 'images/flchebleue.gif'>
 			<a href="<?=$transUrl["Fiche thématique gestion des accès - menaces sur le déchiffrage"]?>" target="_blank" >
 				<?=$trans["Fiche thématique <i>gestion des accès - menaces sur le déchiffrage</i>"]?>
 			</a>
