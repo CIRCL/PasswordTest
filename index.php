@@ -2,7 +2,7 @@
 	$loadindexjs=true;
 	require_once "header.php";
 ?>
-<a href="/index.php?lang=<?=$transLang?>"><?=$transLangText?></a>
+<a href="index.php?lang=<?=$transLang?>"><?=$transLangText?></a>
 <form action = 'eval.php' method = 'post' name = 'form'>
 
 	<input type="hidden" name="lang" value="<?=$currentLang?>" />

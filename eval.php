@@ -231,7 +231,7 @@ if ($nbr_familles_caracteres_utilisees > 0)
 	echo "</tr>";
 	echo "</table>";
 	echo "<br/>";
-	echo "<a href='/index.php?lang=".$currentLang."'>".$trans["Retour"]."</a>";
+	echo "<a href='index.php?lang=".$currentLang."'>".$trans["Retour"]."</a>";
 	echo "</center>";
 	echo "</div>";
 }
