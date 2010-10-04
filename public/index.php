@@ -3,7 +3,15 @@
 	$indexFile=true;
 	require_once "../header.php";
 ?>
-<a href="index.php?lang=<?=$transLang?>"><?=$transLangText?></a>
+<?php if ($currentLang!='fr'): ?>
+	<a href="index.php?lang=fr" ><img src="images/flag_fr_64.png" alt="Français"  border="0"/></a>
+<?php endif; ?>
+<?php if ($currentLang!='de'): ?>
+	<a href="index.php?lang=de"><img src="images/flag_de_64.png" alt="Allemand" border="0"/></a>
+<?php endif; ?>
+<?php if ($currentLang!='en'): ?>
+	<a href="index.php?lang=en"><img src="images/flag_en_64.png" alt="Anglais" border="0"/></a>
+<?php endif; ?>
 <form action = 'eval.php' method = 'post' name = 'form'>
 
 	<input type="hidden" name="lang" value="<?=$currentLang?>" />
