@@ -8,7 +8,6 @@
  *	New rewrite september 2010 by Manu
  */
 
-require_once "include/conf.php";
 require_once "translations/translations.php";
 require_once "include/functions.php";
 ?>

@@ -1,4 +1,5 @@
 <?php
+	require_once "../include/conf.php";
 	$indexFile=true;
 	require_once "../header.php";
 ?>
