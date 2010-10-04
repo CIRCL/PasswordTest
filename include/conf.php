@@ -30,4 +30,12 @@
 	$flopsParMD5 = 250;
 
 	//longueur du mot de passe par défaut
-	$longueur_MdP_ = 8;
+	define("LONG_DEFAUT",8);
+	define("LONG_MAX",40);
+	define("LONG_MIN",4);
+
+	//save to database
+	define("USE_DB",true);
+
+	//store session id
+	define("STORE_SESSION",true);

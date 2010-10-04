@@ -1,31 +1,52 @@
 <?php
-$loadindexjs=false;
-require_once "header.php";
+require_once "../include/conf.php";
+if (STORE_SESSION)
+{
+	session_start();
+	$sessionId=session_id();
+}
+else
+{
+	$sessionId="NO_SESSION";
+}
+
+$indexFile=false;
+require_once "../header.php";
 
 if (!((isset($_POST['longueur_MdP']))))
 	$longueur_MdP_ = 8;
 else
+{
 	$longueur_MdP_ = securiser_input($_POST['longueur_MdP']);
-
+	if ($longueur_MdP_>LONG_MAX)
+	{
+		$longueur_MdP_=LONG_MAX;
+	}
+	elseif ($longueur_MdP_<LONG_MIN)
+	{
+		$longueur_MdP_=LONG_MIN;
+	}
+}
 if (!((isset($_POST['set_chars_minuscules']))))
 	$set_chars_minuscules_ = 0;
 else
-	$set_chars_minuscules_ = securiser_input($_POST['set_chars_minuscules']);
+	$set_chars_minuscules_ = 1;
 
 if (!((isset($_POST['set_chars_majuscules']))))
 	$set_chars_majuscules_ = 0;
 else
-	$set_chars_majuscules_ = securiser_input($_POST['set_chars_majuscules']);
+	$set_chars_majuscules_ = 1;
 
 if (!((isset($_POST['set_chars_chiffres']))))
 	$set_chars_chiffres_ = 0;
 else
-	$set_chars_chiffres_ = securiser_input($_POST['set_chars_chiffres']);
-
+{
+	$set_chars_chiffres_ = 1;
+}
 if (!((isset($_POST['set_chars_speciaux']))))
 	$set_chars_speciaux_ = 0;
 else
-	$set_chars_speciaux_ = securiser_input($_POST['set_chars_speciaux']);
+	$set_chars_speciaux_ = 1;
 
 $nbr_caracteres_utilises = 0;
 $nbr_familles_caracteres_utilisees = 0;
@@ -74,6 +95,27 @@ if (isset($set_chars_speciaux_))
 if ($nbr_familles_caracteres_utilisees > 0)
 {
 
+	if (USE_DB)
+	{
+		$timestamp=date('U');
+
+		$db=new SQLite3("../data/db.sqlite");
+
+		$stmt = $db->prepare('INSERT INTO stats VALUES(:session_id,:timestamp,:length,:lcase,:ucase,:numbers,:special);');
+
+		$stmt->bindValue(':lcase', $set_chars_minuscules_, SQLITE3_INTEGER);
+		$stmt->bindValue(':ucase', $set_chars_majuscules_, SQLITE3_INTEGER);
+		$stmt->bindValue(':numbers', $set_chars_chiffres_, SQLITE3_INTEGER);
+		$stmt->bindValue(':special', $set_chars_speciaux_, SQLITE3_INTEGER);
+		$stmt->bindValue(':length', $longueur_MdP_, SQLITE3_INTEGER);
+		$stmt->bindValue(':session_id', $sessionId, SQLITE3_TEXT);
+		$stmt->bindValue(':timestamp', $timestamp, SQLITE3_TEXT);
+
+		$result = $stmt->execute();
+
+		$db->close();
+	}
+	
 	echo "<h2 style='text-align:center;'>".$trans["Evaluation de la résistance du mot de passe à différentes attaques brute-force"]."</h2>";
 
 	$nbr_combinaisons_possibles_du_MdP=0;
@@ -90,7 +132,6 @@ if ($nbr_familles_caracteres_utilisees > 0)
 	$nbr_jours_distribuee = (($nbr_combinaisons_possibles_du_MdP*$flopsParMD5)/$puissance_distribuee)/(3600*24);
 	$nbr_jours_top500_number_one = (($nbr_combinaisons_possibles_du_MdP*$flopsParMD5)/$puissance_top500_number_one)/(3600*24);
 	$nbr_jours_totalcomputing = (($nbr_combinaisons_possibles_du_MdP*$flopsParMD5)/$puissance_totalecomputing)/(3600*24);
-	echo "<div id='container'>";
 	echo "<center>";
 	echo "<table border = '1'>";
 
@@ -233,7 +274,6 @@ if ($nbr_familles_caracteres_utilisees > 0)
 	echo "<br/>";
 	echo "<a href='index.php?lang=".$currentLang."'>".$trans["Retour"]."</a>";
 	echo "</center>";
-	echo "</div>";
 }
 
-require_once "footer.php";
+require_once "../footer.php";

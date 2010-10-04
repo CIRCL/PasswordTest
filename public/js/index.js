@@ -33,9 +33,9 @@ function()
 
 	$("#slider").slider({
 			range: "min",
-			value: 8,
-			min: 1,
-			max: 40,
+			value: motDePasseDefaut,
+			min: motDePasseMin,
+			max: motDePasseMax,
 			slide: function(event, ui) {
 				$('#longueur_MdP_ecrit').html(ui.value);
 				$('#longueur_MdP').val(ui.value);
