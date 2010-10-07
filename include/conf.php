@@ -39,3 +39,12 @@
 
 	//store session id
 	define("STORE_SESSION",true);
+
+	//send through serial
+	define("SERIAL",true);
+	define("SERIAL_DEBUG",true);
+	define("SERIAL_DEVICE","COM1");
+
+	//Password strength scale
+	define("SCALE_MIN",0);
+	define("SCALE_MAX",100);

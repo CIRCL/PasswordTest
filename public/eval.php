@@ -1,5 +1,6 @@
 <?php
 require_once "../include/conf.php";
+require_once "../include/php_serial.class.php";
 if (STORE_SESSION)
 {
 	session_start();
@@ -118,12 +119,43 @@ if ($nbr_familles_caracteres_utilisees > 0)
 	
 	echo "<h2 style='text-align:center;'>".$trans["Evaluation de la résistance du mot de passe à différentes attaques brute-force"]."</h2>";
 
+	//calcul des combinaisons possibles
 	$nbr_combinaisons_possibles_du_MdP=0;
 	for($t=1;$t<$longueur_MdP_;$t++)
 	{
 		$nbr_combinaisons_possibles_du_MdP += bcpow($nbr_caracteres_utilises,$t);
 	}
 	$nbr_combinaisons_possibles_du_MdP += bcpow($nbr_caracteres_utilises,$longueur_MdP_)*$facteur_chance;
+
+	//calcul d'un force arbitraire du mot de passe
+	if(SERIAL)
+	{
+		$strength=log($nbr_combinaisons_possibles_du_MdP,2);
+		$facteur=($strength-25)/25;
+		$strength*=1/(1+exp(-$facteur));
+		if ($strength<0) $strength=0;
+		if ($strength>100) $strength=100;
+		$scale=SCALE_MAX-SCALE_MIN;
+		$scaledStrength=($strength/100)*$scale;
+		$scaledStrength+=SCALE_MIN;
+		$scaledStrength=round($scaledStrength);
+
+		$setting=ini_get('display_errors');
+		if (!SERIAL_DEBUG)
+		{
+			ini_set('display_errors',false);
+		}
+		else
+		{
+			ini_set('display_errors',true);
+		}
+		$serial=new phpSerial();
+		$serial->deviceSet(SERIAL_DEVICE);
+		$serial->deviceOpen();
+		$serial->sendMessage($scaledStrength);
+		$serial->deviceClose();
+		ini_set('display_errors',$setting);
+	}
 
 	if ($longueur_MdP_ == 0)
 		echo $trans["Votre mot de passe ne comprend aucun caractère, il s'agit donc du mot de passe vide qui est trivial à deviner ;)"];
