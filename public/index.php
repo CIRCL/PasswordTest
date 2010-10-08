@@ -34,7 +34,7 @@
 
 		<div id="type">
 			<h4><?=$trans["2. Quels sont les caractères utilisés dans le mot de passe ?"]?></h4>
-			<table width = '45%' border = '0' align="center">
+			<table width = '45%' align="center">
 				<tr>
 					<td width="20%">
 						<input type='checkbox' name='set_chars_minuscules' value='1'>

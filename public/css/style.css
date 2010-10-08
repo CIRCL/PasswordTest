@@ -9,6 +9,12 @@ input[type=checkbox] {
 	display:none;
 }
 
+.center {
+	margin-left: auto ;
+	margin-right: auto ;
+	text-align:center;
+}
+
 a:link {
 	COLOR: #0C326C;
 }
@@ -23,6 +29,15 @@ a:active {
 
 a:hover {
 	COLOR: #0C326C;
+}
+
+table.results , table.results td  {
+	border:1px solid #1F5BA5;
+}
+
+table {
+	margin-left: auto ;
+	margin-right: auto ;
 }
 
 td {
@@ -56,7 +71,7 @@ h4 {
 }
 
 #container {
-	height:10em;
+	height:13em;
 }
 
 #longueur {

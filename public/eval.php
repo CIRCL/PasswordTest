@@ -164,148 +164,41 @@ if ($nbr_familles_caracteres_utilisees > 0)
 	$nbr_jours_distribuee = (($nbr_combinaisons_possibles_du_MdP*$flopsParMD5)/$puissance_distribuee)/(3600*24);
 	$nbr_jours_top500_number_one = (($nbr_combinaisons_possibles_du_MdP*$flopsParMD5)/$puissance_top500_number_one)/(3600*24);
 	$nbr_jours_totalcomputing = (($nbr_combinaisons_possibles_du_MdP*$flopsParMD5)/$puissance_totalecomputing)/(3600*24);
-	echo "<center>";
-	echo "<table border = '1'>";
+	echo "<table class='results'>";
 
 	echo "<tr>";
-		echo "<td align = 'center'>&nbsp;</td>";
-		echo "<td align = 'center'><b>".$trans["Jours"]."</b></td>";
-		echo "<td align = 'center'><b>".$trans["Années"]."</b></td>";
-		//echo "<td align = 'center'><b>Temps nécessaire moyen pour <i>brute-forcer</i> un tel mot de passe<b></td>";
-		echo "<td align = 'center'><b>".$trans["Siècles"]."</b></td>";
+		echo "<td width='70%'>&nbsp;</td>";
+		echo "<td width='30%'><b>".$trans["Temps requis"]."</b></td>";
 	echo "</tr>";
 
 	echo "<tr>";
-		echo "<td align = 'center'><b>".$trans["Résistance à une"]." <a href = '#attaque_standard_content' id='attaque_standard_link'>".$trans["attaque standard"]."</a></b></td>";
-		if (round($nbr_jours_standard*24*3600/60, 0) == 0)
-		{
-			echo "<td align = 'center'>_</td>";
-			echo "<td align = 'center'><b>".$trans["instantané"]."</b></td>";
-			echo "<td align = 'center'>_</td>";
-		}
-		else
-		{
-			if (($nbr_jours_standard) < 1)
-			{
-				if (round($nbr_jours_standard*24*3600/60, 0) < 60)
-					echo "<td align = 'center'>" . round($nbr_jours_standard*24*3600/60, 0) . " ".$trans["minute(s)"]."</td>";
-				else
-					echo "<td align = 'center'>" . round(round($nbr_jours_standard*24*3600/60, 0)/60, 1) . " ".$trans["heure(s)"]."</td>";
-			}
-			else
-				echo "<td align = 'center'>" . round($nbr_jours_standard, 2) . " ".$trans["jours"]."</td>";
-			if (round($nbr_jours_standard/365.25, 1) == 0)
-				echo "<td align = 'center'>_</td>";
-			else
-				echo "<td align = 'center'>".$trans["soit"]." " . round($nbr_jours_standard/365.25, 1) . " ".$trans["année(s)"]."</td>";
-			if (round($nbr_jours_standard/36525, 1) == 0)
-				echo "<td align = 'center'>_</td>";
-			else
-				echo "<td align = 'center'>".$trans["soit"]." " . round($nbr_jours_standard/36525, 1) . " ".$trans["siècle(s)"]."</td>";
-		}
+		echo "<td><b>".$trans["Résistance à une"]." <a href = '#attaque_standard_content' id='attaque_standard_link'>".$trans["attaque standard"]."</a></b></td>";
+		$affichage=affiche_temps($nbr_jours_standard);
+		echo "<td>".$affichage[0].$trans[$affichage[1]].$affichage[2].$trans[$affichage[3]]."</td>";
 	echo "</tr>";
 
 	echo "<tr>";
-		echo "<td align = 'center'><b>".$trans["Résistance à une"]." <a href = '#attaque_distribuee_content' id='attaque_distribuee_link' >".$trans["attaque distribuée"]."</a></b></td>";
-		if (round($nbr_jours_distribuee*24*3600/60, 0) == 0)
-		{
-			echo "<td align = 'center'>_</td>";
-			echo "<td align = 'center'><b>".$trans["instantané"]."</b></td>";
-			echo "<td align = 'center'>_</td>";
-		}
-		else
-		{
-			if (($nbr_jours_distribuee) < 1)
-			{
-				if (round($nbr_jours_distribuee*24*3600/60, 0) < 60)
-					echo "<td align = 'center'>" . round($nbr_jours_distribuee*24*3600/60, 0) . " ".$trans["minute(s)"]."</td>";
-				else
-					echo "<td align = 'center'>" . round(round($nbr_jours_distribuee*24*3600/60, 0)/60, 1) . " ".$trans["heure(s)"]."</td>";
-			}
-			else
-				echo "<td align = 'center'>" . round($nbr_jours_distribuee, 2) . " ".$trans["jours"]."</td>";
-			if (round($nbr_jours_distribuee/365.25, 1) == 0)
-				echo "<td align = 'center'>_</td>";
-			else
-				echo "<td align = 'center'>".$trans["soit"]." " . round($nbr_jours_distribuee/365.25, 1) . " ".$trans["année(s)"]."</td>";
-			if (round($nbr_jours_distribuee/36525, 1) == 0)
-				echo "<td align = 'center'>_</td>";
-			else
-				echo "<td align = 'center'>".$trans["soit"]." " . round($nbr_jours_distribuee/36525, 1) . " ".$trans["siècle(s)"]."</td>";
-		}
+		echo "<td><b>".$trans["Résistance à une"]." <a href = '#attaque_distribuee_content' id='attaque_distribuee_link' >".$trans["attaque distribuée"]."</a></b></td>";
+		$affichage=affiche_temps($nbr_jours_distribuee);
+		echo "<td>".$affichage[0].$trans[$affichage[1]].$affichage[2].$trans[$affichage[3]]."</td>";
 	echo "</tr>";
 
 	echo "<tr>";
-		echo "<td align = 'center'><b>".$trans["Résistance à une"]." <a href = '#attaque_top500_number_one_content' id = 'attaque_top500_number_one_link'>".$trans["attaque avec l'ordinateur le plus puissant de la planète"]."</a></b></td>";
-		if (round($nbr_jours_top500_number_one*24*3600/60, 0) == 0)
-		{
-			echo "<td align = 'center'>_</td>";
-			echo "<td align = 'center'><b>".$trans["instantané"]."</b></td>";
-			echo "<td align = 'center'>_</td>";
-		}
-		else
-		{
-			if (($nbr_jours_top500_number_one) < 1)
-			{
-				if (round($nbr_jours_top500_number_one*24*3600/60, 0) < 60)
-					echo "<td align = 'center'>" . round($nbr_jours_top500_number_one*24*3600/60, 0) . " ".$trans["minute(s)"]."</td>";
-				else
-					echo "<td align = 'center'>" . round(round($nbr_jours_top500_number_one*24*3600/60, 0)/60, 1) . " ".$trans["heure(s)"]."</td>";
-			}
-			else
-			{
-				$tmp = round($nbr_jours_top500_number_one, 2);
-				//echo "<td align = 'center'>" . separer_les_milliers_de_nbr_a_virgules("$tmp") . " jours</td>";
-				echo "<td align = 'center'>" . $tmp . " ".$trans["jours"]."</td>";
-			}
-			if (round($nbr_jours_top500_number_one/365.25, 1) == 0)
-				echo "<td align = 'center'>_</td>";
-			else
-			{
-				$tmp = round($nbr_jours_top500_number_one/365.25, 1);
-				echo "<td align = 'center'>".$trans["soit"]." " . separer_les_milliers_de_nbr_a_virgules("$tmp") . " ".$trans["année(s)"]."</td>";
-				//echo "<td align = 'center'>soit " . $tmp . " année(s)</td>";
-			}
-			if (round($nbr_jours_top500_number_one/36525, 1) == 0)
-				echo "<td align = 'center'>_</td>";
-			else
-				echo "<td align = 'center'>".$trans["soit"]." " . round($nbr_jours_top500_number_one/36525, 1) . " ".$trans["siècle(s)"]."</td>";
-		}
+		echo "<td><b>".$trans["Résistance à une"]." <a href = '#attaque_top500_number_one_content' id = 'attaque_top500_number_one_link'>".$trans["attaque avec l'ordinateur le plus puissant de la planète"]."</a></b></td>";
+		$affichage=affiche_temps($nbr_jours_top500_number_one);
+		echo "<td>".$affichage[0].$trans[$affichage[1]].$affichage[2].$trans[$affichage[3]]."</td>";
 	echo "</tr>";
 
 	echo "<tr>";
-		echo "<td align = 'center'><b>".$trans["Résistance à une"]." <a href = '#attaque_totalcomputing_content' id = 'attaque_totalcomputing_link'>".$trans["attaque utilisant les 500 plus puissants ordinateurs de la planète"]."</a></b></td>";
-		if (round($nbr_jours_totalcomputing*24*3600/60, 0) == 0)
-		{
-			echo "<td align = 'center'>_</td>";
-			echo "<td align = 'center'><b>".$trans["instantané"]."</b></td>";
-			echo "<td align = 'center'>_</td>";
-		}
-		else
-		{
-			if (($nbr_jours_totalcomputing) < 1)
-			{
-				if (round($nbr_jours_totalcomputing*24*3600/60, 0) < 60)
-					echo "<td align = 'center'>" . round($nbr_jours_totalcomputing*24*3600/60, 0) . " ".$trans["minute(s)"]."</td>";
-				else
-					echo "<td align = 'center'>" . round(round($nbr_jours_totalcomputing*24*3600/60, 0)/60, 1) . " ".$trans["heure(s)"]."</td>";
-			}
-			else
-				echo "<td align = 'center'>" . round($nbr_jours_totalcomputing, 2) . " ".$trans["jours"]."</td>";
-			if (round($nbr_jours_totalcomputing/365.25, 1) == 0)
-				echo "<td align = 'center'>_</td>";
-			else
-				echo "<td align = 'center'>".$trans["soit"]." " . round($nbr_jours_totalcomputing/365.25, 1) . " ".$trans["année(s)"]."</td>";
-			if (round($nbr_jours_totalcomputing/36525, 1) == 0)
-				echo "<td align = 'center'>_</td>";
-			else
-				echo "<td align = 'center'>".$trans["soit"]." " . round($nbr_jours_totalcomputing/36525, 1) . " ".$trans["siècle(s)"]."</td>";
-		}
+		echo "<td><b>".$trans["Résistance à une"]." <a href = '#attaque_totalcomputing_content' id = 'attaque_totalcomputing_link'>".$trans["attaque utilisant les 500 plus puissants ordinateurs de la planète"]."</a></b></td>";
+		$affichage=affiche_temps($nbr_jours_totalcomputing);
+		echo "<td>".$affichage[0].$trans[$affichage[1]].$affichage[2].$trans[$affichage[3]]."</td>";
 	echo "</tr>";
 	echo "</table>";
 	echo "<br/>";
+	echo "<div class='center'>";
 	echo "<input type='button' value='".$trans["Retour"]."' onclick='window.location=\"index.php?lang=".$currentLang."\"'/>";
-	echo "</center>";
+	echo "</div>";
 }
 
 require_once "../footer.php";

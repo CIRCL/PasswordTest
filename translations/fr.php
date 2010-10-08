@@ -90,3 +90,9 @@
 	$trans["Retour"]="Retour";
 	$trans["Suivant"]="Suivant";
 	$trans["Vous devez choisir au moins un jeu de caractères!"]="Vous devez choisir au moins un jeu de caractères!";
+
+	$trans['']='';
+	$trans["Temps requis"]="Temps requis";
+	$trans["millénaire(s)"]="millénaire(s)";
+	$trans["suivi de"]="suivi de";
+	$trans["zéros] millénaires"]="zéros] millénaires";

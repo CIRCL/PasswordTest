@@ -100,3 +100,9 @@
 	$trans["Retour"]="Back";
 	$trans["Suivant"]="Next";
 	$trans["Vous devez choisir au moins un jeu de caractères!"]="You need to select at least one character set!";
+
+	$trans['']='';
+	$trans["Temps requis"]="Required time";
+	$trans["millénaire(s)"]="millennia";
+	$trans["suivi de"]="followed by";
+	$trans["zéros] millénaires"]="zeroes] millennia";
