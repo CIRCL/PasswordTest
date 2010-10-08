@@ -79,7 +79,7 @@ h4 {
 	display:block;
 }
 
-#type {
+#type , #resultats {
 	text-align:center;
 	display:none;
 }

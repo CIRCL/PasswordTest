@@ -1,6 +1,7 @@
 <?php
 	require_once "../include/conf.php";
-	$indexFile=true;
+	require_once "../translations/translations.php";
+	require_once "../include/functions.php";
 	require_once "../header.php";
 ?>
 <?php if ($currentLang!='fr'): ?>
@@ -12,7 +13,7 @@
 <?php if ($currentLang!='en'): ?>
 	<a href="index.php?lang=en"><img src="images/flag_en_64.png" alt="Anglais" border="0"/></a>
 <?php endif; ?>
-<form action = 'eval.php' method = 'post' name = 'form'>
+<form action = '#' method = 'post' name = 'form'>
 
 	<input type="hidden" name="lang" value="<?=$currentLang?>" />
 	<input type="hidden" name="longueur_MdP" id="longueur_MdP" value="<?=$longueur_MdP_?>" />
@@ -65,9 +66,11 @@
 				</tr>
 			</table>
 			<br/><br/>
-			<input type = 'submit' name='submit' id="submit" value = '<?=$trans["Evaluer la résistance du mot de passe"]?>'/>
+			<input type = 'button' name='submit' id="submit" value = '<?=$trans["Evaluer la résistance du mot de passe"]?>'/>
 			<div class="error"><?=$trans["Vous devez choisir au moins un jeu de caractères!"]?></div>
 		</div>
+
+		<div id="resultats"></div>
 	</div>
 </form>
 

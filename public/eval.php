@@ -1,6 +1,8 @@
 <?php
 require_once "../include/conf.php";
 require_once "../include/php_serial.class.php";
+require_once "../translations/translations.php";
+require_once "../include/functions.php";
 if (STORE_SESSION)
 {
 	session_start();
@@ -10,9 +12,6 @@ else
 {
 	$sessionId="NO_SESSION";
 }
-
-$indexFile=false;
-require_once "../header.php";
 
 if (!((isset($_POST['longueur_MdP']))))
 	$longueur_MdP_ = 8;
@@ -197,8 +196,6 @@ if ($nbr_familles_caracteres_utilisees > 0)
 	echo "</table>";
 	echo "<br/>";
 	echo "<div class='center'>";
-	echo "<input type='button' value='".$trans["Retour"]."' onclick='window.location=\"index.php?lang=".$currentLang."\"'/>";
+	echo "<input type='button' id='reset' value='".$trans["Retour"]."'/>";
 	echo "</div>";
 }
-
-require_once "../footer.php";
