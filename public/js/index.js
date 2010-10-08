@@ -43,4 +43,28 @@ function()
 	});
 	$('#longueur_MdP_ecrit').html($("#slider").slider("value"));
 	$('#longueur_MdP').val($("#slider").slider("value"));
+
+	//replace checkboxes
+	$('.chkimg').click(function(){
+		if ($('input[name='+$(this).attr('id')+']').attr('checked'))
+		{
+			$(this).attr('src',"images/delete.png");
+			$('input[name='+$(this).attr('id')+']').attr('checked',false);
+		}
+		else
+		{
+			$(this).attr('src',"images/check.png");
+			$('input[name='+$(this).attr('id')+']').attr('checked',true);
+		}
+	});
+	$('input[type=checkbox]').each(function(){
+		if ($(this).attr('checked'))
+		{
+			$('#'+$(this).attr('name')).attr('src',"images/check.png");
+		}
+		else
+		{
+			$('#'+$(this).attr('name')).attr('src',"images/delete.png");
+		}
+	});
 }) ;

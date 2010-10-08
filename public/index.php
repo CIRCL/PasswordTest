@@ -36,26 +36,30 @@
 			<h4><?=$trans["2. Quels sont les caractères utilisés dans le mot de passe ?"]?></h4>
 			<table width = '45%' border = '0' align="center">
 				<tr>
-					<td>
+					<td width="20%">
 						<input type='checkbox' name='set_chars_minuscules' value='1'>
+						<img src="images/delete.png" id="set_chars_minuscules" class="chkimg" alt="checkbox"/>
 					</td>
-					<td><?=$trans["Minuscules - a..z"]?></td>
+					<td width="80%"><?=$trans["Minuscules - a..z"]?></td>
 				</tr>
 				<tr>
 					<td>
 						<input type='checkbox' name='set_chars_majuscules' value='1'>
+						<img src="images/delete.png" id="set_chars_majuscules" class="chkimg" alt="checkbox"/>
 					</td>
 					<td><?=$trans["Majuscules - A..Z"]?></td>
 				</tr>
 				<tr>
 					<td>
 						<input type='checkbox' name='set_chars_chiffres' value='1'>
+						<img src="images/delete.png" id="set_chars_chiffres" class="chkimg" alt="checkbox"/>
 					</td>
 					<td><?=$trans["Chiffres - 0..9"]?></td>
 				</tr>
 				<tr>
 					<td>
 						<input type='checkbox' name='set_chars_speciaux' value='1'>
+						<img src="images/delete.png" id="set_chars_speciaux" class="chkimg" alt="checkbox"/>
 					</td>
 					<td><?=$trans["Caractères spéciaux et signes de ponctuation - [](){}@#*.;-_!?, etc."]?></td>
 				</tr>

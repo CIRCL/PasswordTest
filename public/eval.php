@@ -304,7 +304,7 @@ if ($nbr_familles_caracteres_utilisees > 0)
 	echo "</tr>";
 	echo "</table>";
 	echo "<br/>";
-	echo "<a href='index.php?lang=".$currentLang."'>".$trans["Retour"]."</a>";
+	echo "<input type='button' value='".$trans["Retour"]."' onclick='window.location=\"index.php?lang=".$currentLang."\"'/>";
 	echo "</center>";
 }
 
