@@ -28,8 +28,8 @@ require_once "include/functions.php";
 		</script>
 	<?php endif; ?>
 	<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
-	<script type="text/javascript" src="js/fancybox/jquery.easing-1.3.pack.js"></script>
-	<script type="text/javascript" src="js/fancybox/jquery.mousewheel-3.0.2.pack.js"></script>
+	<!--<script type="text/javascript" src="js/fancybox/jquery.easing-1.3.pack.js"></script>-->
+	<!--<script type="text/javascript" src="js/fancybox/jquery.mousewheel-3.0.2.pack.js"></script>-->
 	<script type="text/javascript" src="js/fancybox/jquery.fancybox-1.3.1.pack.js"></script>
 	<?php if ($indexFile): ?>
 		<script type="text/javascript" src="js/index.js"></script>
