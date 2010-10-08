@@ -65,7 +65,7 @@
 	$trans["Minuscules - a..z"]="Minuscules - a..z";
 	$trans["Majuscules - A..Z"]="Majuscules - A..Z";
 	$trans["Chiffres - 0..9"]="Chiffres - 0..9";
-	$trans["Caractères spéciaux et signes de ponctuation - [](){}@#*.;-_!?, etc."]="Caractères spéciaux et signes de ponctuation - [](){}@#*.;-_!?, etc.";
+	$trans["Caractères spéciaux et signes de ponctuation - [](){}@#*.;-_!?, etc."]="Caractères spéciaux - [](){}@#*.;-_!?, etc.";
 	$trans["Evaluer la résistance du mot de passe"]="Evaluer la résistance du mot de passe";
 	
 	//***Partie résultats
