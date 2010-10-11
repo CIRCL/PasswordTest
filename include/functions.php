@@ -8,7 +8,7 @@ function securiser_input($input)
 {
 	$input.='';
 	$ret=preg_replace('/\D/','',$input);
-	if (empty($ret))
+	if (empty($ret) || $ret<1)
 	{
 		$ret='8';
 	}

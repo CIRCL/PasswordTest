@@ -75,8 +75,11 @@ if ($set_chars_speciaux_)
 	$nbr_caracteres_utilises += 30;
 	$nbr_familles_caracteres_utilisees++;
 }
+?><?php
 
 if ($nbr_familles_caracteres_utilisees > 0): //jusqu'à la fin
+
+?><?php
 	if (USE_DB)
 	{
 		$timestamp=date('U');
