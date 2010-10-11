@@ -31,7 +31,7 @@
 				<div id="slider"></div>
 			</p>
 			<br/><br/>
-			<input type="button" value="Suivant" id="longueur_next"/>
+			<input type="button" value="<?=$trans['Suivant']?>" id="longueur_next"/>
 		</div>
 
 		<div id="type">

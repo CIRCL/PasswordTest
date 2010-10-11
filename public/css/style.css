@@ -54,16 +54,16 @@ th {
 }
 
 h1 {
-	FONT-WEIGHT: bold; FONT-SIZE: 36px; COLOR: #1F5BA5; LINE-HEIGHT: 28px; FONT-FAMILY: Arial, Helvetica, sans-serif;
+	FONT-WEIGHT: bold; FONT-SIZE: 36px; COLOR: #1F5BA5; FONT-FAMILY: Arial, Helvetica, sans-serif;
 	text-align:center;
 }
 
 .subtitle {
-	FONT-WEIGHT: bold; FONT-SIZE: 28px; COLOR: #9c0000; LINE-HEIGHT: 22px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	FONT-WEIGHT: bold; FONT-SIZE: 28px; COLOR: #9c0000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
 }
 
 h2 {
-	FONT-WEIGHT: bold; FONT-SIZE: 32px; COLOR: #1F5BA5; LINE-HEIGHT: 20px; FONT-FAMILY: Arial, Helvetica, sans-serif;
+	FONT-WEIGHT: bold; FONT-SIZE: 32px; COLOR: #1F5BA5; FONT-FAMILY: Arial, Helvetica, sans-serif;
 }
 
 h3 {
