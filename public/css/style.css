@@ -15,6 +15,10 @@ input[type=checkbox] {
 	text-align:center;
 }
 
+.bold {
+	font-weight: bold;
+}
+
 a:link {
 	COLOR: #0C326C;
 }
@@ -103,4 +107,8 @@ h4 {
 	margin-left: auto ;
 	margin-right: auto ;
 	width: 30em;
+}
+
+#submit_wait {
+	display: none;
 }

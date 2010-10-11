@@ -2,6 +2,7 @@
 	require_once "../include/conf.php";
 	require_once "../translations/translations.php";
 	require_once "../include/functions.php";
+	//start display
 	require_once "../header.php";
 ?>
 <?php if ($currentLang!='fr'): ?>
@@ -16,14 +17,14 @@
 <form action = '#' method = 'post' name = 'form'>
 
 	<input type="hidden" name="lang" value="<?=$currentLang?>" />
-	<input type="hidden" name="longueur_MdP" id="longueur_MdP" value="<?=$longueur_MdP_?>" />
+	<input type="hidden" name="longueur_MdP" id="longueur_MdP" value="<?=LONG_DEFAUT?>" />
 
 	<div id="container">
 		<div id="longueur">
 			<h4><?=$trans["1. Combien de caractères composent le mot de passe ?"]?></h4>
 			<br/>
 			<?=$trans["Le mot de passe est composé de"]?>
-			<span id="longueur_MdP_ecrit"><?=$longueur_MdP_?></span>
+			<span id="longueur_MdP_ecrit"><?=LONG_DEFAUT?></span>
 			<?=$trans["caractères."]?>
 			<br/>
 			<p>
@@ -66,7 +67,8 @@
 				</tr>
 			</table>
 			<br/><br/>
-			<input type = 'button' name='submit' id="submit" value = '<?=$trans["Evaluer la résistance du mot de passe"]?>'/>
+			<input type = 'button' name='submit' id="submit" class="center" value = '<?=$trans["Evaluer la résistance du mot de passe"]?>'/>
+			<img src="images/loading.gif" id="submit_wait" class="center" alt="please wait" />
 			<div class="error"><?=$trans["Vous devez choisir au moins un jeu de caractères!"]?></div>
 		</div>
 

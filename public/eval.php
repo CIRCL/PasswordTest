@@ -27,6 +27,7 @@ else
 		$longueur_MdP_=LONG_MIN;
 	}
 }
+
 if (!((isset($_POST['set_chars_minuscules']))))
 	$set_chars_minuscules_ = 0;
 else
@@ -50,51 +51,32 @@ else
 
 $nbr_caracteres_utilises = 0;
 $nbr_familles_caracteres_utilisees = 0;
-$caracteres_utilises = "";
 
-if (isset($set_chars_minuscules_))
+if ($set_chars_minuscules_)
 {
-	if ($set_chars_minuscules_)
-	{
-		$caracteres_utilises .= "<img src = 'images/flchebleue.gif'> minuscules<br>";
-		$nbr_caracteres_utilises += 26;
-		$nbr_familles_caracteres_utilisees++;
-	}
+	$nbr_caracteres_utilises += 26;
+	$nbr_familles_caracteres_utilisees++;
 }
 
-if (isset($set_chars_majuscules_))
+if ($set_chars_majuscules_)
 {
-	if ($set_chars_majuscules_)
-	{
-		$caracteres_utilises .= "<img src = 'images/flchebleue.gif'> majuscules<br>";
-		$nbr_caracteres_utilises += 26;
-		$nbr_familles_caracteres_utilisees++;
-	}
+	$nbr_caracteres_utilises += 26;
+	$nbr_familles_caracteres_utilisees++;
 }
 
-if (isset($set_chars_chiffres_))
+if ($set_chars_chiffres_)
 {
-	if ($set_chars_chiffres_)
-	{
-		$caracteres_utilises .= "<img src = 'images/flchebleue.gif'> chiffres<br>";
-		$nbr_caracteres_utilises += 10;
-		$nbr_familles_caracteres_utilisees++;
-	}
+	$nbr_caracteres_utilises += 10;
+	$nbr_familles_caracteres_utilisees++;
 }
 
-if (isset($set_chars_speciaux_))
+if ($set_chars_speciaux_)
 {
-	if ($set_chars_speciaux_)
-	{
-		$caracteres_utilises .= "<img src = 'images/flchebleue.gif'> caractères speciaux<br>";
-		$nbr_caracteres_utilises += 30;
-		$nbr_familles_caracteres_utilisees++;
-	}
+	$nbr_caracteres_utilises += 30;
+	$nbr_familles_caracteres_utilisees++;
 }
 
-if ($nbr_familles_caracteres_utilisees > 0)
-{
-
+if ($nbr_familles_caracteres_utilisees > 0): //jusqu'à la fin
 	if (USE_DB)
 	{
 		$timestamp=date('U');
@@ -115,8 +97,6 @@ if ($nbr_familles_caracteres_utilisees > 0)
 
 		$db->close();
 	}
-	
-	echo "<h2 style='text-align:center;'>".$trans["Evaluation de la résistance du mot de passe à différentes attaques brute-force"]."</h2>";
 
 	//calcul des combinaisons possibles
 	$nbr_combinaisons_possibles_du_MdP=0;
@@ -125,6 +105,11 @@ if ($nbr_familles_caracteres_utilisees > 0)
 		$nbr_combinaisons_possibles_du_MdP += bcpow($nbr_caracteres_utilises,$t);
 	}
 	$nbr_combinaisons_possibles_du_MdP += bcpow($nbr_caracteres_utilises,$longueur_MdP_)*$facteur_chance;
+
+	$nbr_jours_standard = (($nbr_combinaisons_possibles_du_MdP*$flopsParMD5)/$puissance_standard)/(3600*24);
+	$nbr_jours_distribuee = (($nbr_combinaisons_possibles_du_MdP*$flopsParMD5)/$puissance_distribuee)/(3600*24);
+	$nbr_jours_top500_number_one = (($nbr_combinaisons_possibles_du_MdP*$flopsParMD5)/$puissance_top500_number_one)/(3600*24);
+	$nbr_jours_totalcomputing = (($nbr_combinaisons_possibles_du_MdP*$flopsParMD5)/$puissance_totalecomputing)/(3600*24);
 
 	//calcul d'un force arbitraire du mot de passe
 	if(SERIAL)
@@ -155,47 +140,48 @@ if ($nbr_familles_caracteres_utilisees > 0)
 		$serial->deviceClose();
 		ini_set('display_errors',$setting);
 	}
+	?>
+	<h2 class='center'>
+		<?=$trans["Evaluation de la résistance du mot de passe à différentes attaques brute-force"]?>
+	</h2>
 
-	if ($longueur_MdP_ == 0)
-		echo $trans["Votre mot de passe ne comprend aucun caractère, il s'agit donc du mot de passe vide qui est trivial à deviner ;)"];
+	<?php if ($longueur_MdP_ == 0): //plus besoin de ça normalement ?>
+		<?=$trans["Votre mot de passe ne comprend aucun caractère, il s'agit donc du mot de passe vide qui est trivial à deviner ;)"]?>
+	<?php endif;?>
 
-	$nbr_jours_standard = (($nbr_combinaisons_possibles_du_MdP*$flopsParMD5)/$puissance_standard)/(3600*24);
-	$nbr_jours_distribuee = (($nbr_combinaisons_possibles_du_MdP*$flopsParMD5)/$puissance_distribuee)/(3600*24);
-	$nbr_jours_top500_number_one = (($nbr_combinaisons_possibles_du_MdP*$flopsParMD5)/$puissance_top500_number_one)/(3600*24);
-	$nbr_jours_totalcomputing = (($nbr_combinaisons_possibles_du_MdP*$flopsParMD5)/$puissance_totalecomputing)/(3600*24);
-	echo "<table class='results'>";
+	<table class='results'>
+		<tr>
+			<td width='70%'>&nbsp;</td>
+			<td width='30%' class="bold"><?=$trans["Temps requis"]?></td>
+		</tr>
 
-	echo "<tr>";
-		echo "<td width='70%'>&nbsp;</td>";
-		echo "<td width='30%'><b>".$trans["Temps requis"]."</b></td>";
-	echo "</tr>";
+		<tr>
+			<td class="bold"><?=$trans["Résistance à une"]?> <a href = '#attaque_standard_content' id='attaque_standard_link'><?=$trans["attaque standard"]?></a></td>
+			<?php $affichage=affiche_temps($nbr_jours_standard); ?>
+			<td><?=$affichage[0].$trans[$affichage[1]].$affichage[2].$trans[$affichage[3]]?></td>
+		</tr>
 
-	echo "<tr>";
-		echo "<td><b>".$trans["Résistance à une"]." <a href = '#attaque_standard_content' id='attaque_standard_link'>".$trans["attaque standard"]."</a></b></td>";
-		$affichage=affiche_temps($nbr_jours_standard);
-		echo "<td>".$affichage[0].$trans[$affichage[1]].$affichage[2].$trans[$affichage[3]]."</td>";
-	echo "</tr>";
+		<tr>
+			<td class="bold"><?=$trans["Résistance à une"]?> <a href = '#attaque_distribuee_content' id='attaque_distribuee_link' ><?=$trans["attaque distribuée"]?></a></td>
+			<?php $affichage=affiche_temps($nbr_jours_distribuee); ?>
+			<td><?=$affichage[0].$trans[$affichage[1]].$affichage[2].$trans[$affichage[3]]?></td>
+		</tr>
 
-	echo "<tr>";
-		echo "<td><b>".$trans["Résistance à une"]." <a href = '#attaque_distribuee_content' id='attaque_distribuee_link' >".$trans["attaque distribuée"]."</a></b></td>";
-		$affichage=affiche_temps($nbr_jours_distribuee);
-		echo "<td>".$affichage[0].$trans[$affichage[1]].$affichage[2].$trans[$affichage[3]]."</td>";
-	echo "</tr>";
+		<tr>
+			<td class="bold"><?=$trans["Résistance à une"]?> <a href = '#attaque_top500_number_one_content' id = 'attaque_top500_number_one_link'><?=$trans["attaque avec l'ordinateur le plus puissant de la planète"]?></a></td>
+			<?php $affichage=affiche_temps($nbr_jours_top500_number_one); ?>
+			<td><?=$affichage[0].$trans[$affichage[1]].$affichage[2].$trans[$affichage[3]]?></td>
+		</tr>
 
-	echo "<tr>";
-		echo "<td><b>".$trans["Résistance à une"]." <a href = '#attaque_top500_number_one_content' id = 'attaque_top500_number_one_link'>".$trans["attaque avec l'ordinateur le plus puissant de la planète"]."</a></b></td>";
-		$affichage=affiche_temps($nbr_jours_top500_number_one);
-		echo "<td>".$affichage[0].$trans[$affichage[1]].$affichage[2].$trans[$affichage[3]]."</td>";
-	echo "</tr>";
-
-	echo "<tr>";
-		echo "<td><b>".$trans["Résistance à une"]." <a href = '#attaque_totalcomputing_content' id = 'attaque_totalcomputing_link'>".$trans["attaque utilisant les 500 plus puissants ordinateurs de la planète"]."</a></b></td>";
-		$affichage=affiche_temps($nbr_jours_totalcomputing);
-		echo "<td>".$affichage[0].$trans[$affichage[1]].$affichage[2].$trans[$affichage[3]]."</td>";
-	echo "</tr>";
-	echo "</table>";
-	echo "<br/>";
-	echo "<div class='center'>";
-	echo "<input type='button' id='reset' value='".$trans["Retour"]."'/>";
-	echo "</div>";
-}
+		<tr>
+			<td class="bold"><?=$trans["Résistance à une"]?> <a href = '#attaque_totalcomputing_content' id = 'attaque_totalcomputing_link'><?=$trans["attaque utilisant les 500 plus puissants ordinateurs de la planète"]?></a></td>
+			<?php $affichage=affiche_temps($nbr_jours_totalcomputing); ?>
+			<td><?=$affichage[0].$trans[$affichage[1]].$affichage[2].$trans[$affichage[3]]?></td>
+		</tr>
+	</table>
+	<br/>
+<?php endif; ?>
+	
+<div class='center'>
+	<input type='button' id='reset' value='<?=$trans["Retour"]?>'/>
+</div>

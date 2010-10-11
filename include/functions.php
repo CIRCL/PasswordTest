@@ -103,7 +103,7 @@ function affiche_temps($nb_jours)
 			$value=$nb_jours/365250;
 			$exponent=log10($value);
 			$mantisse=$value/(pow(10,floor($exponent))*1.0);
-			$ret=array('['.round($mantisse,1).' ','suivi de',' '.round($exponent).' ','zéros] millénaires');
+			$ret=array('['.round($mantisse).' ','suivi de',' '.round($exponent).' ','zéros] millénaires');
 		}
 	}
 	return $ret;

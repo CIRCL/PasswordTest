@@ -35,13 +35,13 @@
 	define("LONG_MIN",4);
 
 	//save to database
-	define("USE_DB",true);
+	define("USE_DB",false);
 
 	//store session id
 	define("STORE_SESSION",true);
 
 	//send through serial
-	define("SERIAL",true);
+	define("SERIAL",false);
 	define("SERIAL_DEBUG",true);
 	define("SERIAL_DEVICE","COM1");
 

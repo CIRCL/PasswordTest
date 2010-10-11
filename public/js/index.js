@@ -1,10 +1,12 @@
 $(document) . ready(
 function()
 {
-        $('#longueur_next').click(function(){
+        //click on the first button
+	$('#longueur_next').click(function(){
                 $('#longueur').fadeOut('fast',function(){$('#type').fadeIn('fast')});
         });
 
+	//click on the second button
 	$('#submit').click(function(){
 		check=$("input:checked").length;
 		if (check==0)
@@ -12,7 +14,8 @@ function()
 			$('.error').fadeIn();
 			return false;
 		}
-
+		$('#submit').css({ "display":"none" });
+		$('#submit_wait').css({ "display":"block" });
 		$.ajax( {
 		type: 'POST' ,
 		data: {
@@ -32,8 +35,11 @@ function()
 				$("#slider").slider('option', 'value', motDePasseDefaut);
 				$('input[type=checkbox]').each(function() {$(this).attr('checked',false)});
 				$('#type').fadeOut('fast',function(){
+					//après la disparition de la deuxième page
 					$('#resultats').fadeIn('fast');
 					resetCheckBoxImages();
+					$('#submit').css({ "display":"block" });
+					$('#submit_wait').css({ "display":"none" });
 				});
 				activateInfoBoxes();
 			},
@@ -44,28 +50,12 @@ function()
 		return false;
         });
 
+	//click on the third button
 	$('#reset').live('click',function(){
 		$('#resultats').fadeOut('fast',function(){$('#longueur').fadeIn('fast')});
 	});
 
-	$('#up').click(function(){
-		var longueur = parseInt($('#longueur_MdP').val()) + 1;
-		if (longueur>30) longueur=30;
-                $('#longueur_MdP_ecrit').html(longueur+"");
-		$('#longueur_MdP').val(longueur+"");
-        });
-	$('#down').click(function(){
-		var longueur = parseInt($('#longueur_MdP').val()) - 1;
-		if (longueur<1) longueur=1;
-                $('#longueur_MdP_ecrit').html(longueur+"");
-		$('#longueur_MdP').val(longueur+"");
-        });
-
-	$('#plus_informations_link').fancybox({
-		'transitionIn'	: 'fade',
-		'transitionOut'	: 'fade'
-	});
-
+	//slider
 	$("#slider").slider({
 			range: "min",
 			value: motDePasseDefaut,
@@ -93,6 +83,7 @@ function()
 		}
 	});
 	resetCheckBoxImages();
+	activateInfoBoxes();
 }) ;
 
 //infoboxes
