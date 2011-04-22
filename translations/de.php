@@ -77,8 +77,8 @@
 	$trans["Résistance à une"]="Güte gegenüber";
 	$trans["attaque standard"]="einem Standardangriff";
 	$trans["attaque distribuée"]="einem verteilten Angriff";
-	$trans["attaque avec l'ordinateur le plus puissant de la planète"]="eines Angriffs mit dem leistungsfähisten Rechners der Welt";
-	$trans["attaque utilisant les 500 plus puissants ordinateurs de la planète"]="eines Angriffs mit Hilfe der 500 leistungsfähsten Rechner der Welt.";
+	$trans["attaque avec l'ordinateur le plus puissant de la planète"]="eines Angriffs mit dem leistungsfähigsten Rechner der Welt";
+	$trans["attaque utilisant les 500 plus puissants ordinateurs de la planète"]="eines Angriffs mit Hilfe der 500 leistungsfähigsten Rechner der Welt.";
 	
 	$trans["instantané"]="augenblicklich";
         $trans["minute"]="Minute";
