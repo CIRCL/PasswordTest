@@ -81,18 +81,23 @@
 	$trans["attaque utilisant les 500 plus puissants ordinateurs de la planète"]="eines Angriffs mit Hilfe der 500 leistungsfähsten Rechner der Welt.";
 	
 	$trans["instantané"]="augenblicklich";
-	$trans["minute(s)"]="Minute(n)";
-	$trans["heure(s)"]="Stunde(n)";
-	$trans["jours"]="Tage";
-	$trans["année(s)"]="Jahr(e)";
-	$trans["siècle(s)"]="Jahrhundert(e)";
-	$trans["soit"]="sprich";
-	$trans["Retour"]="Zurück";
-	$trans["Suivant"]="Weiter";
-	$trans["Vous devez choisir au moins un jeu de caractères!"]="Sie müssen wenigstens einen Zeichensatz auswählen!";
+        $trans["minute"]="Minute";
+        $trans["minutes"]="Minuten";
+        $trans["heure"]="Stunde";
+        $trans["heures"]="Stunden";
+        $trans["jour"]="Tage";
+        $trans["jours"]="Tage";
+        $trans["année"]="Jahr";
+        $trans["années"]="Jahre";
+        $trans["siècle"]="Jahrhundert";
+        $trans["siècles"]="Jahrhunderte";
+	$trans["millénaire"]="Jahrtausende";
+        $trans["millénaires"]="Jahrtausende";
+        $trans["&times;10"]="&times;10";
+        $trans["soit"]="sprich";
+        $trans["Retour"]="Zurück";
+        $trans["Suivant"]="Weiter";
+        $trans["Vous devez choisir au moins un jeu de caractères!"]="Sie müssen wenigstens einen Zeichensatz auswählen!";
 
 	$trans['']='';
 	$trans["Temps requis"]="Benötigte Zeit";
-	$trans["millénaire(s)"]="Jahrtausende";
-	$trans["suivi de"]="gefolgt von";
-	$trans["zéros] millénaires"]="Nullen] Jahrtausende";

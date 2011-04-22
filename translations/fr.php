@@ -79,20 +79,25 @@
 	$trans["attaque distribuée"]="attaque distribuée";
 	$trans["attaque avec l'ordinateur le plus puissant de la planète"]="attaque avec l'ordinateur le plus puissant de la planète";
 	$trans["attaque utilisant les 500 plus puissants ordinateurs de la planète"]="attaque utilisant les 500 plus puissants ordinateurs de la planète";
-	
-	$trans["instantané"]="instantané";
-	$trans["minute(s)"]="minute(s)";
-	$trans["heure(s)"]="heure(s)";
-	$trans["jours"]="jours";
-	$trans["année(s)"]="année(s)";
-	$trans["siècle(s)"]="siècle(s)";
-	$trans["soit"]="soit";
-	$trans["Retour"]="Retour";
-	$trans["Suivant"]="Suivant";
-	$trans["Vous devez choisir au moins un jeu de caractères!"]="Vous devez choisir au moins un jeu de caractères!";
 
+	$trans["instantané"]="instantané";
+        $trans["minute"]="minute";
+        $trans["minutes"]="minutes";
+        $trans["heure"]="heure";
+        $trans["heures"]="heures";
+        $trans["jour"]="jour";
+        $trans["jours"]="jours";
+        $trans["année"]="année";
+        $trans["années"]="années";
+        $trans["siècle"]="siècle";
+        $trans["siècles"]="siècles";
+	$trans["millénaire"]="millénaire";
+        $trans["millénaires"]="millénaires";
+        $trans["&times;10"]="&times;10";
+        $trans["soit"]="soit";
+        $trans["Retour"]="Recommencer";
+        $trans["Suivant"]="Suivant";
+        $trans["Vous devez choisir au moins un jeu de caractères!"]="Vous devez choisir au moins un jeu de caractères!";
+	
 	$trans['']='';
 	$trans["Temps requis"]="Temps requis";
-	$trans["millénaire(s)"]="millénaire(s)";
-	$trans["suivi de"]="suivi de";
-	$trans["zéros] millénaires"]="zéros] millénaires";
