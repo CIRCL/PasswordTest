@@ -70,10 +70,10 @@
 
 	//***Page principale
 	$trans["Tester la résistance d'un mot de passe"]="Tester la résistance d'un mot de passe";
-	$trans["1. Combien de caractères composent le mot de passe ?"]="1. Combien de caractères composent le mot de passe ?";
+	$trans["Combien de caractères composent le mot de passe ?"]="Combien de caractères composent le mot de passe ?";
 	$trans["Le mot de passe est composé de"]="Le mot de passe est composé de";
 	$trans["caractères."]="caractères.";
-	$trans["2. Quels sont les caractères utilisés dans le mot de passe ?"]="2. Quels sont les caractères utilisés dans le mot de passe ?";
+	$trans["Quels sont les caractères utilisés dans le mot de passe ?"]="Quels sont les caractères utilisés dans le mot de passe ?";
 	$trans["Minuscules - a..z"]="Minuscules - a..z";
 	$trans["Majuscules - A..Z"]="Majuscules - A..Z";
 	$trans["Chiffres - 0..9"]="Chiffres - 0..9";

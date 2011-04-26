@@ -80,10 +80,10 @@
 
 	//***Page principale
 	$trans["Tester la résistance d'un mot de passe"]="Test your password strength";
-	$trans["1. Combien de caractères composent le mot de passe ?"]="1. How long is your password ?";
+	$trans["Combien de caractères composent le mot de passe ?"]="How long is your password ?";
 	$trans["Le mot de passe est composé de"]="The password contains";
 	$trans["caractères."]="characters.";
-	$trans["2. Quels sont les caractères utilisés dans le mot de passe ?"]="2. Which characters are used in your password?";
+	$trans["Quels sont les caractères utilisés dans le mot de passe ?"]="Which characters are used in your password?";
 	$trans["Minuscules - a..z"]="Lower case letters - a..z";
 	$trans["Majuscules - A..Z"]="Upper case letters - A..Z";
 	$trans["Chiffres - 0..9"]="Numbers - 0..9";
