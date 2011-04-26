@@ -1,12 +1,16 @@
 <?php
-/**
- * Owner : Manu - CASES
- * Original by Cedric Mauny - Telindus PSF
- *      Sept. Oct. 2006
- *      update mai 2008
- *	Update février 2010 by Manu
- *	New rewrite september 2010 by Manu
- */
+/*******************************************************************************
+Copyright 2010-2011 CASES Luxembourg (www.cases.lu)
+Copyright 2011 SMILE GIE
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+CASES and BEE SECURE are registered trademarks of SMILE GIE, all rights reserved
+********************************************************************************/
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

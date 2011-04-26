@@ -1,6 +1,16 @@
 <?php
-/* ----------------------- FONCTIONS ----------------------- */
+/*******************************************************************************
+Copyright 2010-2011 CASES Luxembourg (www.cases.lu)
+Copyright 2011 SMILE GIE
 
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+CASES and BEE SECURE are registered trademarks of SMILE GIE, all rights reserved
+********************************************************************************/
 
 // ici on sécurise l'input, pour cela on n'accepte que les chiffres et seulement les chiffres
 // on enleve tous les caractères qui ne sont pas des chiffres pour ne donner une chaîne de caractères ne contenant que des chiffres
