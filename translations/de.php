@@ -30,7 +30,7 @@
 
 	//***Aide attaque standard
 	$trans["Attaque standard"]="Standardangriff";
-	$trans["Attaque de type brute-force exécutée sur un PC familial récent utilisant des outils de cassage de mot de passe disponibles gratuitement sur internet."]="Brute-force Aegriff, der auf einem Familien-Rechner neuerer Bauart durchgeführt wird, mit Hilfe von Programmen, die frei im Internet erhältlich sind.";
+	$trans["Attaque de type brute-force exécutée sur un PC familial récent utilisant des outils de cassage de mot de passe disponibles gratuitement sur internet."]="Brute-force Angriff, der auf einem Familien-Rechner neuerer Bauart durchgeführt wird, mit Hilfe von Programmen, die frei im Internet erhältlich sind.";
 	
 	//une phrase
 	$trans["Puissance estimée :"]="Geschätzte Stärke :";
@@ -40,8 +40,8 @@
 	$trans["Attaque distribuée"]="Verteilter Angriff";
 	
 	//une phrase
-	$trans["Mise en parallèle d'un réseau de"]="Parallel geschaltetes Netzwerk";
-	$trans["ordinateurs zombies au sein d'un même botnet (estimation) pour se répartir la tâche de casser un mot de passe."]="Zombierechner eines Botnets (Schätzung) die gemeinsam versuchen ein Passwort zu brechen.";
+	$trans["Mise en parallèle d'un réseau de"]="Parallel geschaltetes Netzwerk aus";
+	$trans["ordinateurs zombies au sein d'un même botnet (estimation) pour se répartir la tâche de casser un mot de passe."]="Zombierechnern eines Botnets (Schätzung) die gemeinsam versuchen ein Passwort zu knacken.";
 	
 	//***Aide attaque top500 - number one
 	$trans["Attaque avec l'ordinateur le plus puissant de la planète"]="Angriff mit dem leistungsfähigsten Rechner der Welt.";
@@ -52,20 +52,20 @@
 	$trans["source : http://www.top500.org/"]="Quelle : http://www.top500.org/";
 
 	//***Aide attaque top500	
-	$trans["Attaque utilisant les 500 plus puissants ordinateurs de la planète"]="Angriff mit den 500 leichtungsstärksten Rechner der Welt.";
+	$trans["Attaque utilisant les 500 plus puissants ordinateurs de la planète"]="Angriff mit den 500 leistungsstärksten Rechner der Welt.";
 	$trans["Puissance de calcul obtenue en combinant le travail des 500 plus puissants ordinateurs de la planète (scénario peu concevable dans les faits)."]="Rechenleistung, die man durch den Zusammenschluss der 500 leistungsstärksten Rechner erhält (eher unrealistisches Szenario).";
 	
 
 	//***Page principale
 	$trans["Tester la résistance d'un mot de passe"]="Die Güte eines Passworts testen";
-	$trans["1. Combien de caractères composent le mot de passe ?"]="1. Aus wievielen Zeichen besteht das Passwort ?";
+	$trans["Combien de caractères composent le mot de passe ?"]="Aus wievielen Zeichen besteht das Passwort ?";
 	$trans["Le mot de passe est composé de"]="Das Passwort besteht aus ";
 	$trans["caractères."]="Zeichen.";
-	$trans["2. Quels sont les caractères utilisés dans le mot de passe ?"]="2. Welche Zeichen werden im Passwort verwendet ?";
-	$trans["Minuscules - a..z"]="Kleinbuchstaben - a..z";
-	$trans["Majuscules - A..Z"]="Großbuchstaben - A..Z";
-	$trans["Chiffres - 0..9"]="Zahlen - 0..9";
-	$trans["Caractères spéciaux et signes de ponctuation - [](){}@#*.;-_!?, etc."]="Sonderzeichen - [](){}@#*.;-_!?, etc.";
+	$trans["Quels sont les caractères utilisés dans le mot de passe ?"]="Welche Zeichen werden im Passwort verwendet ?";
+	$trans["Minuscules - a..z"]="Kleinbuchstaben &mdash; <samp>a&ndash;z</samp>";
+	$trans["Majuscules - A..Z"]="Großbuchstaben &mdash; <samp>A&ndash;Z</samp>";
+	$trans["Chiffres - 0..9"]="Zahlen &mdash; <samp>0&ndash;9</samp>";
+	$trans["Caractères spéciaux et signes de ponctuation - [](){}@#*.;-_!?, etc."]="Sonderzeichen &mdash; <samp>[](){}@#*.;-_!?,</samp> etc.";
 	$trans["Evaluer la résistance du mot de passe"]="Güte des Passworts bestimmen";
 	
 	//***Partie résultats
@@ -81,23 +81,22 @@
 	$trans["attaque utilisant les 500 plus puissants ordinateurs de la planète"]="eines Angriffs mit Hilfe der 500 leistungsfähigsten Rechner der Welt.";
 	
 	$trans["instantané"]="augenblicklich";
-        $trans["minute"]="Minute";
-        $trans["minutes"]="Minuten";
-        $trans["heure"]="Stunde";
-        $trans["heures"]="Stunden";
-        $trans["jour"]="Tage";
-        $trans["jours"]="Tage";
-        $trans["année"]="Jahr";
-        $trans["années"]="Jahre";
-        $trans["siècle"]="Jahrhundert";
-        $trans["siècles"]="Jahrhunderte";
-	$trans["millénaire"]="Jahrtausende";
-        $trans["millénaires"]="Jahrtausende";
-        $trans["&times;10"]="&times;10";
-        $trans["soit"]="sprich";
-        $trans["Retour"]="Zurück";
-        $trans["Suivant"]="Weiter";
-        $trans["Vous devez choisir au moins un jeu de caractères!"]="Sie müssen wenigstens einen Zeichensatz auswählen!";
+	$trans["minute"]="Minute";
+	$trans["minutes"]="Minuten";
+	$trans["heure"]="Stunde";
+	$trans["heures"]="Stunden";
+	$trans["jour"]="Tage";
+	$trans["jours"]="Tage";
+	$trans["année"]="Jahr";
+	$trans["années"]="Jahre";
+	$trans["siècle"]="Jahrhundert";
+	$trans["siècles"]="Jahrhunderte";
+	$trans["millénaire"]="Jahrtausend";
+	$trans["millénaires"]="Jahrtausende";
+	$trans["soit"]="sprich";
+	$trans["Retour"]="Zurück";
+	$trans["Suivant"]="Weiter";
+	$trans["Vous devez choisir au moins un jeu de caractères!"]="Sie müssen wenigstens einen Zeichensatz auswählen!";
 
 	$trans['']='';
 	$trans["Temps requis"]="Benötigte Zeit";

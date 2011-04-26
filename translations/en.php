@@ -103,7 +103,6 @@
         $trans["siècles"]="centuries";
 	$trans["millénaire"]="millennium";
         $trans["millénaires"]="millennia";
-        $trans["&times;10"]="&times;10";
         $trans["soit"]="or";
         $trans["Retour"]="Back";
         $trans["Suivant"]="Next";

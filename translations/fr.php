@@ -93,7 +93,6 @@
         $trans["siècles"]="siècles";
 	$trans["millénaire"]="millénaire";
         $trans["millénaires"]="millénaires";
-        $trans["&times;10"]="&times;10";
         $trans["soit"]="soit";
         $trans["Retour"]="Recommencer";
         $trans["Suivant"]="Suivant";

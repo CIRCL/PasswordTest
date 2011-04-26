@@ -21,7 +21,7 @@
 
 	<div id="container">
 		<div id="longueur">
-			<h4><?=$trans["1. Combien de caractères composent le mot de passe ?"]?></h4>
+			<h4><?=$trans["Combien de caractères composent le mot de passe ?"]?></h4>
 			<br/>
 			<?=$trans["Le mot de passe est composé de"]?>
 			<span id="longueur_MdP_ecrit"><?=LONG_DEFAUT?></span>
@@ -35,7 +35,7 @@
 		</div>
 
 		<div id="type">
-			<h4><?=$trans["2. Quels sont les caractères utilisés dans le mot de passe ?"]?></h4>
+			<h4><?=$trans["Quels sont les caractères utilisés dans le mot de passe ?"]?></h4>
 			<table width = '45%' align="center">
 				<tr>
 					<td width="20%">

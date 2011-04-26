@@ -161,25 +161,25 @@ if ($nbr_familles_caracteres_utilisees > 0): //jusqu'à la fin
 		<tr>
 			<td class="bold"><?=$trans["Résistance à une"]?> <a href = '#attaque_standard_content' id='attaque_standard_link'><?=$trans["attaque standard"]?></a></td>
 			<?php $affichage=affiche_temps($nbr_jours_standard); ?>
-			<td><?=$affichage[0].$trans[$affichage[1]].$affichage[2].$trans[$affichage[3]]?></td>
+			<td><?=$affichage[0].$affichage[1].$affichage[2].$trans[$affichage[3]]?></td>
 		</tr>
 
 		<tr>
 			<td class="bold"><?=$trans["Résistance à une"]?> <a href = '#attaque_distribuee_content' id='attaque_distribuee_link' ><?=$trans["attaque distribuée"]?></a></td>
 			<?php $affichage=affiche_temps($nbr_jours_distribuee); ?>
-			<td><?=$affichage[0].$trans[$affichage[1]].$affichage[2].$trans[$affichage[3]]?></td>
+			<td><?=$affichage[0].$affichage[1].$affichage[2].$trans[$affichage[3]]?></td>
 		</tr>
 
 		<tr>
 			<td class="bold"><?=$trans["Résistance à une"]?> <a href = '#attaque_top500_number_one_content' id = 'attaque_top500_number_one_link'><?=$trans["attaque avec l'ordinateur le plus puissant de la planète"]?></a></td>
 			<?php $affichage=affiche_temps($nbr_jours_top500_number_one); ?>
-			<td><?=$affichage[0].$trans[$affichage[1]].$affichage[2].$trans[$affichage[3]]?></td>
+			<td><?=$affichage[0].$affichage[1].$affichage[2].$trans[$affichage[3]]?></td>
 		</tr>
 
 		<tr>
 			<td class="bold"><?=$trans["Résistance à une"]?> <a href = '#attaque_totalcomputing_content' id = 'attaque_totalcomputing_link'><?=$trans["attaque utilisant les 500 plus puissants ordinateurs de la planète"]?></a></td>
 			<?php $affichage=affiche_temps($nbr_jours_totalcomputing); ?>
-			<td><?=$affichage[0].$trans[$affichage[1]].$affichage[2].$trans[$affichage[3]]?></td>
+			<td><?=$affichage[0].$affichage[1].$affichage[2].$trans[$affichage[3]]?></td>
 		</tr>
 	</table>
 	<br/>
