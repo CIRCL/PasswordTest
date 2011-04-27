@@ -70,7 +70,7 @@
 
 	//***Page principale
 	$trans["Tester la résistance d'un mot de passe"]="Die Güte eines Passworts testen";
-	$trans["Combien de caractères composent le mot de passe ?"]="Aus wievielen Zeichen besteht das Passwort ?";
+	$trans["Combien de caractères composent le mot de passe?"]="Aus wievielen Zeichen besteht das Passwort?";
 	$trans["Le mot de passe est composé de"]="Das Passwort besteht aus ";
 	$trans["caractères."]="Zeichen.";
 	$trans["Quels sont les caractères utilisés dans le mot de passe ?"]="Welche Zeichen werden im Passwort verwendet ?";

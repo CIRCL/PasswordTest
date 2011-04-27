@@ -70,14 +70,14 @@
 
 	//***Page principale
 	$trans["Tester la résistance d'un mot de passe"]="Tester la résistance d'un mot de passe";
-	$trans["Combien de caractères composent le mot de passe ?"]="Combien de caractères composent le mot de passe ?";
+	$trans["Combien de caractères composent le mot de passe?"]="Combien de caractères composent le mot de passe?";
 	$trans["Le mot de passe est composé de"]="Le mot de passe est composé de";
 	$trans["caractères."]="caractères.";
 	$trans["Quels sont les caractères utilisés dans le mot de passe ?"]="Quels sont les caractères utilisés dans le mot de passe ?";
-	$trans["Minuscules - a..z"]="Minuscules - a..z";
-	$trans["Majuscules - A..Z"]="Majuscules - A..Z";
-	$trans["Chiffres - 0..9"]="Chiffres - 0..9";
-	$trans["Caractères spéciaux et signes de ponctuation - [](){}@#*.;-_!?, etc."]="Caractères spéciaux - [](){}@#*.;-_!?, etc.";
+	$trans["Minuscules - a..z"]="Minuscules &mdash; <samp>a&ndash;z</samp>";
+	$trans["Majuscules - A..Z"]="Majuscules &mdash; <samp>A&ndash;Z</samp>";
+	$trans["Chiffres - 0..9"]="Chiffres &mdash; <samp>0&ndash;9</samp>";
+	$trans["Caractères spéciaux et signes de ponctuation - [](){}@#*.;-_!?, etc."]="Caractères spéciaux &mdash; <samp>[](){}@#*.;-_!?,</samp> etc.";
 	$trans["Evaluer la résistance du mot de passe"]="Evaluer la résistance du mot de passe";
 	
 	//***Partie résultats
@@ -93,22 +93,22 @@
 	$trans["attaque utilisant les 500 plus puissants ordinateurs de la planète"]="attaque utilisant les 500 plus puissants ordinateurs de la planète";
 
 	$trans["instantané"]="instantané";
-        $trans["minute"]="minute";
-        $trans["minutes"]="minutes";
-        $trans["heure"]="heure";
-        $trans["heures"]="heures";
-        $trans["jour"]="jour";
-        $trans["jours"]="jours";
-        $trans["année"]="année";
-        $trans["années"]="années";
-        $trans["siècle"]="siècle";
-        $trans["siècles"]="siècles";
+	$trans["minute"]="minute";
+	$trans["minutes"]="minutes";
+	$trans["heure"]="heure";
+	$trans["heures"]="heures";
+	$trans["jour"]="jour";
+	$trans["jours"]="jours";
+	$trans["année"]="année";
+	$trans["années"]="années";
+	$trans["siècle"]="siècle";
+	$trans["siècles"]="siècles";
 	$trans["millénaire"]="millénaire";
-        $trans["millénaires"]="millénaires";
-        $trans["soit"]="soit";
-        $trans["Retour"]="Recommencer";
-        $trans["Suivant"]="Suivant";
-        $trans["Vous devez choisir au moins un jeu de caractères!"]="Vous devez choisir au moins un jeu de caractères!";
+	$trans["millénaires"]="millénaires";
+	$trans["soit"]="soit";
+	$trans["Retour"]="Recommencer";
+	$trans["Suivant"]="Suivant";
+	$trans["Vous devez choisir au moins un jeu de caractères!"]="Vous devez choisir au moins un jeu de caractères!";
 	
 	$trans['']='';
 	$trans["Temps requis"]="Temps requis";

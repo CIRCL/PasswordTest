@@ -12,19 +12,67 @@
 	CASES and BEE SECURE are registered trademarks of SMILE GIE, all rights reserved
 	********************************************************************************/
 
-	if (isset($_REQUEST['lang']) && $_REQUEST['lang']=='de')
+	class translations
 	{
-		include_once "de.php";
-		$currentLang="de";
-	}
-	elseif (isset($_REQUEST['lang']) && $_REQUEST['lang']=='en')
-	{
-		include_once "en.php";
-		$currentLang="en";
-	}
-	else
-	{
-		include_once "fr.php";
-		$currentLang="fr";
+		private $currentLang;
+		private $trans;
+		private static $instance;
+
+		public function __construct($language='fr')
+		{
+			switch($language)
+			{
+				case "de":
+					include_once "de.php";
+					$currentLang="de";
+					break;
+				case "en":
+					include_once "en.php";
+					$currentLang="en";
+					break;
+				default:
+					include_once "fr.php";
+					$currentLang="fr";
+					break;
+			}
+			$this->trans=$trans;	
+			$this->currentLang=$currentLang;
+		}
+
+		public function getLanguage()
+		{
+			return $this->currentLang;
+		}
+
+		public function translate($original)
+		{
+			if (array_key_exists($original,$this->trans))
+			{
+				return $this->trans[$original];
+			}
+			return "### $original ###";
+		}
+
+		public function __invoke($original)
+		{
+			return $this->translate($original);
+		}
+		
+		public static function getInstance($language='fr')
+		{
+			if (! self::$instance instanceof self)
+			{
+				self::$instance=new self($language);
+			}
+			return self::$instance;
+		}
 	}
 
+	if (isset($_REQUEST['lang']))
+        {
+                $translate=translations::getInstance($_REQUEST['lang']);
+        }
+        else
+        {
+		$translate=translations::getInstance();
+        }

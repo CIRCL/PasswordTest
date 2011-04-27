@@ -18,7 +18,7 @@ CASES and BEE SECURE are registered trademarks of SMILE GIE, all rights reserved
 <html>
 
 <head>
-	<title><?=$trans["Tester la résistance d'un mot de passe"]?></title>
+	<title><?=$translate("Tester la résistance d'un mot de passe")?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<script type="text/javascript">
@@ -37,6 +37,6 @@ CASES and BEE SECURE are registered trademarks of SMILE GIE, all rights reserved
 	<link media="screen" rel="stylesheet" type="text/css" href="js/fancybox/jquery.fancybox-1.3.1.css" />
 </head>
 <body>
-<h1><?=$trans["Tester la résistance d'un mot de passe"]?></h1>
+<h1><?=$translate("Tester la résistance d'un mot de passe")?></h1>
 
 <br><br><br>

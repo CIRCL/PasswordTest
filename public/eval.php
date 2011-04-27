@@ -152,46 +152,46 @@ if ($nbr_familles_caracteres_utilisees > 0): //jusqu'à la fin
 	}
 	?>
 	<h2 class='center'>
-		<?=$trans["Evaluation de la résistance du mot de passe à différentes attaques brute-force"]?>
+		<?=$translate("Evaluation de la résistance du mot de passe à différentes attaques brute-force")?>
 	</h2>
 
 	<?php if ($longueur_MdP_ == 0): //plus besoin de ça normalement ?>
-		<?=$trans["Votre mot de passe ne comprend aucun caractère, il s'agit donc du mot de passe vide qui est trivial à deviner ;)"]?>
+		<?=$translate("Votre mot de passe ne comprend aucun caractère, il s'agit donc du mot de passe vide qui est trivial à deviner ;)")?>
 	<?php endif;?>
 
 	<table class='results'>
 		<tr>
 			<td width='70%'>&nbsp;</td>
-			<td width='30%' class="bold"><?=$trans["Temps requis"]?></td>
+			<td width='30%' class="bold"><?=$translate("Temps requis")?></td>
 		</tr>
 
 		<tr>
-			<td class="bold"><?=$trans["Résistance à une"]?> <a href = '#attaque_standard_content' id='attaque_standard_link'><?=$trans["attaque standard"]?></a></td>
+			<td class="bold"><?=$translate("Résistance à une")?> <a href = '#attaque_standard_content' id='attaque_standard_link'><?=$translate("attaque standard")?></a></td>
 			<?php $affichage=affiche_temps($nbr_jours_standard); ?>
-			<td><?=$affichage[0].$affichage[1].$affichage[2].$trans[$affichage[3]]?></td>
+			<td><?=$affichage[0].$affichage[1].$affichage[2].$translate($affichage[3])?></td>
 		</tr>
 
 		<tr>
-			<td class="bold"><?=$trans["Résistance à une"]?> <a href = '#attaque_distribuee_content' id='attaque_distribuee_link' ><?=$trans["attaque distribuée"]?></a></td>
+			<td class="bold"><?=$translate("Résistance à une")?> <a href = '#attaque_distribuee_content' id='attaque_distribuee_link' ><?=$translate("attaque distribuée")?></a></td>
 			<?php $affichage=affiche_temps($nbr_jours_distribuee); ?>
-			<td><?=$affichage[0].$affichage[1].$affichage[2].$trans[$affichage[3]]?></td>
+			<td><?=$affichage[0].$affichage[1].$affichage[2].$translate($affichage[3])?></td>
 		</tr>
 
 		<tr>
-			<td class="bold"><?=$trans["Résistance à une"]?> <a href = '#attaque_top500_number_one_content' id = 'attaque_top500_number_one_link'><?=$trans["attaque avec l'ordinateur le plus puissant de la planète"]?></a></td>
+			<td class="bold"><?=$translate("Résistance à une")?> <a href = '#attaque_top500_number_one_content' id = 'attaque_top500_number_one_link'><?=$translate("attaque avec l'ordinateur le plus puissant de la planète")?></a></td>
 			<?php $affichage=affiche_temps($nbr_jours_top500_number_one); ?>
-			<td><?=$affichage[0].$affichage[1].$affichage[2].$trans[$affichage[3]]?></td>
+			<td><?=$affichage[0].$affichage[1].$affichage[2].$translate($affichage[3])?></td>
 		</tr>
 
 		<tr>
-			<td class="bold"><?=$trans["Résistance à une"]?> <a href = '#attaque_totalcomputing_content' id = 'attaque_totalcomputing_link'><?=$trans["attaque utilisant les 500 plus puissants ordinateurs de la planète"]?></a></td>
+			<td class="bold"><?=$translate("Résistance à une")?> <a href = '#attaque_totalcomputing_content' id = 'attaque_totalcomputing_link'><?=$translate("attaque utilisant les 500 plus puissants ordinateurs de la planète")?></a></td>
 			<?php $affichage=affiche_temps($nbr_jours_totalcomputing); ?>
-			<td><?=$affichage[0].$affichage[1].$affichage[2].$trans[$affichage[3]]?></td>
+			<td><?=$affichage[0].$affichage[1].$affichage[2].$translate($affichage[3])?></td>
 		</tr>
 	</table>
 	<br/>
 <?php endif; ?>
 	
 <div class='center'>
-	<input type='button' id='reset' value='<?=$trans["Retour"]?>'/>
+	<input type='button' id='reset' value='<?=$translate("Retour")?>'/>
 </div>
